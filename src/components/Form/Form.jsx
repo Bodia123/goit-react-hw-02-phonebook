@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from './Form.module.css';
 
 class FormContact extends Component {
   state = {
@@ -20,10 +21,10 @@ class FormContact extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Ім'я
+      <form className={css.form} onSubmit={this.handleSubmit}>
+        <div className={css.inputBox}>
           <input
+            className={css.inputEl}
             autoComplete="off"
             type="text"
             name="name"
@@ -33,10 +34,12 @@ class FormContact extends Component {
             onChange={this.handleChange}
             value={this.state.name}
           />
-        </label>
-        <label>
-          Номер телефону
+          <label className={css.labelEl}>Ім'я</label>
+        </div>
+
+        <div className={css.inputBox}>
           <input
+            className={css.inputEl}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -46,8 +49,14 @@ class FormContact extends Component {
             onChange={this.handleChange}
             value={this.state.number}
           />
-        </label>
-        <button type="submit" disabled={!this.state.name || !this.state.number}>
+          <label className={css.labelEl}>Номер телефону</label>
+        </div>
+
+        <button
+          type="submit"
+          disabled={!this.state.name || !this.state.number}
+          className={css.addButton}
+        >
           Додати контак!
         </button>
       </form>

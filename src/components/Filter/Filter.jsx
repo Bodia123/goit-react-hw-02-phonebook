@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from './Filter.module.css';
 
 class Filter extends Component {
   state = {
@@ -7,10 +8,15 @@ class Filter extends Component {
 
   render() {
     return (
-      <label>
-        Фільтр
-        <input type="text" name="filter" onChange={this.props.onChange} />
-      </label>
+      <div className={css.wrapper}>
+        <input
+          className={css.inputEl}
+          type="text"
+          name="filter"
+          onChange={this.props.onChange}
+        />
+        <label className={css.labelEl}>Фільтр</label>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
-// import css from './App.module.css';
+import css from './App.module.css';
 
 import FormContact from './Form/Form';
 import Filter from './Filter/Filter';
@@ -60,16 +60,18 @@ export class App extends Component {
     const visibleContact = this.getVisisbleContact();
 
     return (
-      <div>
-        <h1>Контакти</h1>
-        <FormContact onSubmit={this.addContact} />
+      <div className={css.wrapper}>
+        <h1 className={css.mainTitle}>Контакти</h1>
+        <div className={css.container}>
+          <FormContact onSubmit={this.addContact} />
 
-        <h2>Contacts</h2>
-        <Filter onChange={this.handleInput} />
-        <List
-          onVisibleContact={visibleContact}
-          onDeleteContact={this.deleteContact}
-        />
+          <h2 className={css.secondTitle}>Список контактів</h2>
+          <Filter onChange={this.handleInput} />
+          <List
+            onVisibleContact={visibleContact}
+            onDeleteContact={this.deleteContact}
+          />
+        </div>
       </div>
     );
   }
