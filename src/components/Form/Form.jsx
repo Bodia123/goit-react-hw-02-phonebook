@@ -57,7 +57,7 @@ class FormContact extends Component {
           disabled={!this.state.name || !this.state.number}
           className={css.addButton}
         >
-          Додати контак!
+          Додати контакт!
         </button>
       </form>
     );

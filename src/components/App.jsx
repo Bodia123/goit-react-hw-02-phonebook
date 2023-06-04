@@ -34,7 +34,7 @@ export class App extends Component {
     if (filter) {
       Notiflix.Notify.failure(`${name} уже є в списку контактів`);
     } else {
-      Notiflix.Notify.success('Контакт добавився');
+      Notiflix.Notify.success('Контакт додався');
       this.setState(prevState => ({
         contacts: [...prevState.contacts, contact],
       }));

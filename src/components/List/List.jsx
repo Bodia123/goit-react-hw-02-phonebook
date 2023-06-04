@@ -8,7 +8,7 @@ class List extends Component {
         {this.props.onVisibleContact.map(contact => {
           return (
             <li key={contact.id} className={css.listItem}>
-              <p className={css.itemName}>{contact.name}</p>
+              <p className={css.itemName}>{contact.name}:</p>
               <p className={css.itemNumber}>{contact.number}</p>
               <button
                 className={css.deleteButton}
